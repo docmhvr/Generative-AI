@@ -1,5 +1,5 @@
 from langchain_community.llms import Ollama
-from langchain_core.prompt import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 import streamlit as st
@@ -21,10 +21,13 @@ prompt = ChatPromptTemplate.from_messages(
 )
 
 # Streamlit UI
-st.titles("LangChain Chatbot")
+st.title("LangChain Chatbot")
 input_text = st.text_input("Search any topic you want")
 
 # Local LLM with Ollama
 llm = Ollama(model = "llama2")
 output_parser = StrOutputParser()
 chain = prompt|llm|output_parser
+
+if input_text:
+    st.write(chain.invoke({"query": input_text}))
