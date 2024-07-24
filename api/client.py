@@ -14,5 +14,5 @@ st.title("Langchain with Llama2 API")
 input_text = st.text_input("Enter the topic for the essay")
 
 if input_text:
-    st.write(get_llm_response(inpput_text))
+    st.write(get_llm_response(input_text))
 
