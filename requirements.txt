@@ -9,3 +9,4 @@ langserve
 fastapi
 uvicorn
 sse_starlette
+ipykernel
