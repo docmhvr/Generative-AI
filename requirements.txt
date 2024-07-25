@@ -11,3 +11,6 @@ sse_starlette
 ipykernel
 unstructured
 bs4
+langchain-ollama
+chromadb
+faiss-cpu
